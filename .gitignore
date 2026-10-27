@@ -426,3 +426,9 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Grid image (local only)
+Grid.tif
+# Outputs that show the grid image (local only)
+results/1_detected_dots.png
+results/FOVCAL_report.pdf

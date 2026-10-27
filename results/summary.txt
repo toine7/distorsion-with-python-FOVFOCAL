@@ -1,0 +1,43 @@
+FOV CALIBRATION REPORT
+============================================================
+Image                       : Grid.tif  (2048 x 2048 pix)
+Date                        : 2026-10-27 22:32
+Dot spacing (target)        : 0.8 mm
+Sensor pixel size           : 5.50 um
+Dots used                   : 182  (13 columns x 14 rows)
+
+1) FOVCAL FIT  (nominal grid -> measured grid, similarity)
+------------------------------------------------------------
+Transform matrix (MATLAB tform.T convention):
+[[181.55165   0.53736   0.     ]
+ [ -0.53736 181.55165   0.     ]
+ [169.90494  44.06408   1.     ]]
+Scale                       : 181.552 pix/mm   (x 181.552, y 181.552)
+MAGNIFICATION               : 0.99854   (x 0.99854, y 0.99854)
+Pixel size on object        : 5.5081 um/pix
+Field of view on object     : 11.280 x 11.280 mm
+Grid rotation               : 0.1696 deg
+Residuals (= lens aberrations, incl. distortion)
+   RMS                      : 0.520 pix  = 2.87 um on object
+   max                      : 1.704 pix  = 9.39 um on object
+
+2) RADIAL DISTORTION MODEL  (measured = c + (p - c)(1 + k1 r^2 + k2 r^4))
+------------------------------------------------------------
+Distortion centre (x, y)    : (1073.4, 1063.9) pix
+   offset from image centre : (+49.4, +39.9) pix
+k1, k2  (r norm. 1448.2 pix): 2.2569e-03, 3.8685e-04
+Paraxial magnification      : 0.99746   (scale at the distortion centre)
+Distortion at farthest dot  : +0.2307 %   (pincushion)
+Distortion at image corner  : +0.2917 %   (extrapolated)
+Residuals after radial model: RMS 0.112 pix, max 0.362 pix
+   (what is left: non-radial errors such as target tilt, target errors, noise)
+
+HOW TO READ THE VECTOR MAPS
+------------------------------------------------------------
+- FOVCAL residual map: measured - fitted position. The fit takes the
+  average scale over the dots, so with pincushion distortion the vectors
+  point inward in the middle and outward in the corners (barrel: reversed).
+- Classical distortion map: position relative to the paraxial (centre)
+  scale. Pure radial distortion gives vectors pointing away from the
+  centre (pincushion) or towards it (barrel), growing with the radius.
+- Arrows are magnified; the key above each map gives the arrow length.
